@@ -4,7 +4,17 @@ resource "aws_spot_instance_request" "web" {
   
   ami = "ami-0b2f56158ac6590fe"
   
-  instance_type = "${var.instance_type}"
+  instance_type = "t2.micro"
+  
+  subnet_id     = "${aws_subnet.private_1.id}"
+  
+  security_groups = ["${aws_security_group.WebSrvrSG.id}"]
+  
+  associate_public_ip_address  = true
+  
+  key_name      = "newInstanceKey"
+  
+  
   
   spot_price = "${var.spot_price}"
   
