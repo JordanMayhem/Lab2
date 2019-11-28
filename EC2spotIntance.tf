@@ -29,10 +29,10 @@ resource "aws_spot_fleet_request" "fleetRequest" {
     associate_public_ip_address  = true
     key_name          = "newInstanceKey"
     
-    availability_zone = "  ----> "${var.availability_zone}"       us-west-2a  <---- "
+    availability_zone = "us-west-2a"
   
   
-    subnet_id     = "${aws_subnet.private_1.id}"
+    subnet_id     = ["${aws_subnet.private_1.id}"]
     security_groups = ["${aws_security_group.WebSrvrSG.id}"]
     
     tags = {
@@ -48,7 +48,7 @@ resource "aws_spot_fleet_request" "fleetRequest" {
     associate_public_ip_address  = true
     key_name          = "newInstanceKey"
     
-    availability_zone = "  ----> "${var.availability_zone}"       us-west-2b <----  "
+    availability_zone = "us-west-2b"
   
   
     subnet_id     = "${aws_subnet.private_2.id}"
