@@ -18,10 +18,8 @@ resource "aws_spot_fleet_request" "fleetRequest" {
   spot_price      = "0.005"
   target_capacity = 2
   wait_for_fulfillment = true
-# allocation_strategy = "lowestPrice " (current default)
-# InstancePoolsToUseCount = 2
-# valid_until     = "2019-11-04T20:44:20Z"
-# spot_type = "one-time or persistent(default) "
+  allocation_strategy = "lowestPrice "
+  InstancePoolsToUseCount = 2
 
   
 # Spot Instance 1 
