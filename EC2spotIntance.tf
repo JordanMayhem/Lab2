@@ -18,7 +18,7 @@ resource "aws_spot_fleet_request" "fleetRequest" {
   spot_price      = "0.005"
   target_capacity = 2
   wait_for_fulfillment = true
-  allocation_strategy = "lowestPrice "
+  allocation_strategy = "lowestPrice"
   InstancePoolsToUseCount = 2
 
   
